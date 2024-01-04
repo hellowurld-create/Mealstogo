@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "Mealstogo",
-    "slug": "Mealstogo",
-    "version": "1.0.0",
+    "name": "Meals2go",
+    "slug": "Meals2go",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FEB500"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,7 +20,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FEB500"
       }
     },
     "web": {
