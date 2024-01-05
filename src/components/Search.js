@@ -1,42 +1,33 @@
-// src/components/YourComponentFolder/YourComponent.js
 import React from 'react';
-import { Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Searchbar } from 'react-native-paper';
+import styled from 'styled-components/native';
 
-export default function Search() {
+const HeaderContainer = styled.View`
+  flex: 0.2;
+  align-items: flex-start;
+  justify-content: center;
+  padding-horizontal: ${(props) => props.theme.space.l};
+`;
+
+const StyledSearchbar = styled(Searchbar)`
+  border-radius: 15px;
+  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  height: 50px;
+  border-color: black;
+  border-width: 1px;
+`;
+
+const Search = () => {
   return (
-    <>
-        <View style={styles.header}>
-          <Searchbar
-            placeholder='Search'
-            style={styles.searchBar}
-            inputStyle={styles.searchInput}
-            iconColor={'#000'}
-            searchIcon={{ backgroundColor: '#000' }}
-          />
-        </View>
-    </>
+    <HeaderContainer>
+      <StyledSearchbar
+        placeholder='Search'
+        inputStyle={{ color: '#000', alignSelf: 'center' }}
+        iconColor='#000'
+        searchIcon={{ backgroundColor: '#000' }}
+      />
+    </HeaderContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-
-  header: {
-    flex: 0.1,
-    alignItems: 'flex-start',
-    justifyContent: 'center',
-    paddingHorizontal: 16,
- 
-  },
-  searchBar: {
-    borderRadius: 15,
-    backgroundColor: '#f0f0f0', 
-    height: 50,
-    borderColor: 'black',
-    borderWidth: 1
-  },
-  searchInput: {
-    color: '#000', 
-    alignSelf: 'center'
-  },
-});
+export default Search;
