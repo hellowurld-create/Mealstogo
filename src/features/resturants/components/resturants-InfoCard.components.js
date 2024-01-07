@@ -27,7 +27,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     
   return (
       <RestaurantCard elevation={5}>
-        <RestaurantCardCover source={{ uri: photos[0] }} />
+        <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
         <Info>
             <Text variant='label'>{name}</Text>
             <Address>{address}</Address>
