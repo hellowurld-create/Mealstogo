@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Searchbar } from 'react-native-paper';
 import styled from 'styled-components/native';
+import { LocationContext } from '../services/location/location.context';
 
 const HeaderContainer = styled.View`
   flex: 0.1;
@@ -24,6 +25,13 @@ const StyledSearchbar = styled(Searchbar)`
 
 
 const Search = () => {
+  const {keyword,search} = useContext(LocationContext);
+  const [searchKeyword, setSearchKeyword] = useState(keyword);
+  
+  useEffect(() => {
+    search(searchKeyword)
+  },[])
+
   return (
     <HeaderContainer>
       <StyledSearchbar
@@ -31,6 +39,14 @@ const Search = () => {
         inputStyle={{ color: '#333', fontSize: 16, alignSelf: 'center' }} 
         iconColor='#333' 
         searchIcon={{ backgroundColor: 'transparent' }} 
+        value={searchKeyword}
+        onSubmitEditing={() => {
+          search(searchKeyword);
+        }}
+        onChangeText={(text) =>
+        {
+          setSearchKeyword(text)
+        }}
       />
     </HeaderContainer>
   );

@@ -7,6 +7,8 @@ import { ThemeProvider } from 'styled-components/native';
 import { ResturantsScreen } from './src/features/resturants/screens/resturants.screen';
 import { theme } from './src/infrasturcture/Theme';
 import { RestaurantsContextProvider } from './src/services/restaurants/restaurants.context';
+import { LocationContextProvider } from './src/services/location/location.context';
+
 
 import {
   Montserrat_400Regular,
@@ -62,6 +64,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <LocationContextProvider>
       <RestaurantsContextProvider>
       <NavigationContainer>
         <Tab.Navigator
@@ -83,6 +86,7 @@ export default function App() {
         </Tab.Navigator>
         </NavigationContainer>
         </RestaurantsContextProvider>
+        </LocationContextProvider>
     </ThemeProvider>
   );
 }

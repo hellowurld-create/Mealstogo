@@ -59,27 +59,14 @@ const Loading = styled(ActivityIndicator)`
 
 
 export const ResturantsScreen = () => {
-  // const restaurantData = [
-  //   { name: 'Restaurant 1' },
-  //   { name: 'Restaurant 2' },
-  //   { name: 'Restaurant 3' },
-  //   { name: 'Restaurant 4' },
-  // ];
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
-  
- 
   return (
     <>
-      {isLoading && (
-        <LoadingContainer >
-          <Loading
-            size={50}
-            animating={true}
-            color='#000'
-          />
+       {isLoading && (
+        <LoadingContainer>
+          <Loading size={50} animating={true} color='#000' />
         </LoadingContainer>
-        )
-      }
+      )}
       <RestaurantContainer>
         <HeaderContainer>
           <WelcomeText>Good Day,</WelcomeText>
