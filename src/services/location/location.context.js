@@ -14,14 +14,17 @@ export const LocationContextProvider = ({ children }) => {
   setIsLoading(true);
   setKeyword(searchKeyword);
   
-  // Check if searchKeyword is empty and reset location to null
-  if (!searchKeyword.trim()) {
+  };
+  
+  useEffect(() => {
+    // Check if searchKeyword is empty and reset location to null
+  if (!keyword.length) {
     setLocation(null);
     setIsLoading(false); // No need to keep loading state when the keyword is empty
     return;
   }
 
-  locationRequest(searchKeyword.toLowerCase())
+  locationRequest(keyword.toLowerCase())
     .then(locationTransform)
     .then((result) => {
       setIsLoading(false);
@@ -32,7 +35,7 @@ export const LocationContextProvider = ({ children }) => {
       setIsLoading(false);
       setError(err);
     });
-};
+  },[keyword])
 
 
   return (
