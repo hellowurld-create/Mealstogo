@@ -1,9 +1,9 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { useState, useContext, createContext, useEffect } from "react";
 
 import {
   restaurantsRequest,
   restaurantsTransform,
-} from "./restaurants.services";
+} from "./restaurants.service";
 
 import { LocationContext } from "../location/location.context";
 
@@ -19,30 +19,25 @@ export const RestaurantsContextProvider = ({ children }) => {
     setIsLoading(true);
     setRestaurants([]);
 
-    restaurantsRequest(loc)
-      .then(restaurantsTransform)
-      .then((results) => {
-        setError(null);
-        setIsLoading(false);
-        setRestaurants(results);
-      })
-      .catch((err) => {
-        setRestaurants([]);
-        setIsLoading(false);
-        setError(err);
-      });
+    setTimeout(() => {
+      restaurantsRequest(loc)
+        .then(restaurantsTransform)
+        .then((results) => {
+          setIsLoading(false);
+          setRestaurants(results);
+        })
+        .catch((err) => {
+          setIsLoading(false);
+          setError(err);
+        });
+    }, 2000);
   };
-
-useEffect(() => {
-    // Check if location is available and has lat property
+  useEffect(() => {
     if (location) {
       const locationString = `${location.lat},${location.lng}`;
       retrieveRestaurants(locationString);
-    } else {
-      // Handle the case when location or location.lat is null
-      setError("Location information is not available.");
     }
-  }, [location]); // Include location in the dependency array to trigger the effect on location changes
+  }, [location]);
 
   return (
     <RestaurantsContext.Provider
@@ -56,4 +51,3 @@ useEffect(() => {
     </RestaurantsContext.Provider>
   );
 };
-

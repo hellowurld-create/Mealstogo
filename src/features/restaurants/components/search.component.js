@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react';
-import { Searchbar } from 'react-native-paper';
-import styled from 'styled-components/native';
-import { LocationContext } from '../services/location/location.context';
+import React, { useContext, useEffect, useState } from "react";
+import { Searchbar } from "react-native-paper";
+import styled from "styled-components/native";
+import { LocationContext } from "../../../services/location/location.context";
+
 
 const HeaderContainer = styled.View`
   flex: 0.1;
@@ -24,17 +25,22 @@ const StyledSearchbar = styled(Searchbar)`
 `;
 
 
-const Search = () => {
+const Search = ({ isFavouritesToggled, onFavouritesToggle }) => {
   const {keyword,search} = useContext(LocationContext);
   const [searchKeyword, setSearchKeyword] = useState(keyword);
   
+    useEffect(() => {
+        setSearchKeyword(keyword)
+    }, [keyword]);
+
   return (
     <HeaderContainer>
       <StyledSearchbar
         placeholder='Search'
         inputStyle={{ color: '#333', fontSize: 16, alignSelf: 'center' }} 
         iconColor='#333' 
-        searchIcon={{ backgroundColor: 'transparent' }} 
+        icon={isFavouritesToggled ? "heart" : "heart-outline"}
+        onIconPress={onFavouritesToggle}
         value={searchKeyword}
         onSubmitEditing={() => {
           search(searchKeyword);
