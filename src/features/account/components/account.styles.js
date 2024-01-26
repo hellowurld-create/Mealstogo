@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const AccountCover = styled.View`
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 90%;
     background-color: rgba(255, 255, 255, 0.8); 
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -17,7 +17,7 @@ export const AccountCoverInner = styled.View`
     flex: 0.8;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 70px;
     background-color: white;
 `;
 
@@ -55,15 +55,17 @@ export const ButtonContainer = styled.View`
 `;
 
 export const CustomButton = styled.TouchableOpacity`
-    background-color: #007bff;
     padding: 25px 30px; 
     border-radius: 5px;
     align-items: center;
     margin: 8px 10px;
+    border-width: 2px;
+    border-color: #007bff; /* Set border color */
+     color: #666;
 `;
 
 export const CustomButtonText = styled.Text`
-    color: #fff;
+    color: #666;
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 1px; 
