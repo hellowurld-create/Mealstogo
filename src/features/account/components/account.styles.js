@@ -54,10 +54,10 @@ export const ButtonContainer = styled.View`
 
 export const CustomButton = styled.TouchableOpacity`
     background-color: #FEB500;
-    padding: 20px 30px; 
+    padding: 20px 20px; 
     border-radius: 5px;
     align-items: center;
-    margin: 8px 10px;
+    margin: 8px 30px;
 `;
 
 export const CustomButtonText = styled.Text`
