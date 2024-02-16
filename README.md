@@ -26,7 +26,8 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/restaurant-finder-app.git
+git clone https://github.com/hellowurld-create/Mealstogo.git
+
 Navigate to the project directory:
 
 bash
