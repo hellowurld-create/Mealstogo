@@ -1,5 +1,6 @@
-Restaurant Finder Mobile App
-The Restaurant Finder Mobile App is an application designed to help users discover nearby restaurants, explore their menus, and make reservations.
+MealsToGo Mobile App
+
+The MealsToGo Mobile App is an application designed to help users discover nearby restaurants, explore their menus, and make reservations.
 This README provides an overview of the app's features, installation instructions, and usage guidelines.
 
 Features
@@ -30,7 +31,7 @@ Navigate to the project directory:
 
 bash
 Copy code
-cd restaurant-finder-app
+cd MealsToGo
 Install dependencies:
 
 bash
@@ -49,8 +50,6 @@ Usage
 User Registration/Login: Users can register or login to their accounts using their email and password.
 Finding Restaurants: Users can search for nearby restaurants using the app's search functionality.
 Viewing Restaurant Details: Select a restaurant from the list to view its details including menu, reviews, and ratings.
-Making Reservations: Users can make reservations by selecting a time slot and providing necessary details.
-Exploring Menus: Browse through the restaurant's menu, view dish details, and prices.
 Leaving Reviews and Ratings: Users can leave reviews and ratings for restaurants they have visited.
 Contributing
 Contributions are welcome! If you would like to contribute to the development of this project, please follow these steps:
